@@ -30,32 +30,35 @@ This card **requires** the custom integration to function:
 
 ***
 
-## Installation
+## 🛠 Installation
 
-The Pulsarr Requests Card is installed through HACS in the Frontend/Lovelace section, as it is a custom UI element.
+### Option 1: HACS My Home Assistant (Recommended)
 
-### 1. Install the Backend Integration First
+The easiest way to install the Pulsarr Requests Card is via HACS.
 
-You must install the **Pulsarr Enhanced Requests** integration (HACS > Integrations) and configure it first to create the required sensor entity (`sensor.pulsarr_enhanced_requests`).
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=SpaceFrags&repository=pulsarr-requests-card&category=plugin)
 
-### 2. Install the Custom Card via HACS (Recommended)
+### Option 2: Manual HACS Installation
 
-1.  In Home Assistant, navigate to **HACS**.
-2.  Go to the **Frontend** tab (or "Lovelace").
-3.  Click the **+ Explore & Download Repositories** button.
-4.  Search for **"Pulsarr Requests Card"**.
-5.  Click **Download** and select the latest version.
-6.  HACS should automatically add the required resource entry for the card. If it doesn't, follow the manual resource steps below.
+1.  Ensure you have **HACS (Home Assistant Community Store)** installed.
+2.  Click the **...** menu in the top right and select **Custom repositories**.
+3.  Enter the URL of this GitHub repository and select **Lovelace** as the category.
+4.  Click **Add**.
+5.  Search for "Pulsarr Requests Card" in the HACS Frontend section and click **Install**.
+6.  **Reload** your Home Assistant frontend (a hard refresh `Ctrl+F5` or `Shift+F5` is recommended).
 
-### 3. Manual Resource Configuration (If needed)
+### Option 3: Manual Installation
 
-If HACS does not automatically add the resource, you need to manually add it to your Lovelace configuration.
+1.  Download the `pulsarr_requests_card.js` file from the latest release of this repository.
+2.  Place the file into your Home Assistant configuration directory under `www/pulsarr_requests_card/`.
+    * Path should look like: `/config/www/pulsarr_requests_card/pulsarr_requests_card.js`
+3.  Add a resource reference in your Lovelace configuration (via the UI or `ui-lovelace.yaml`):
 
-1.  Go to **Settings** > **Dashboards** (or "Lovelace Dashboards").
-2.  Click the three dots **(⋮)** in the top right and select **"Resources"**.
-3.  Click **"Add Resource"** and enter the following details:
-    * **URL:** `/hacsfiles/pulsarr-requests-card/pulsarr-requests-card.js`
-    * **Resource Type:** `JavaScript Module`
+    **If using the UI:**
+    * Go to **Settings** > **Dashboards** > **...** > **Resources**.
+    * Click **Add Resource**.
+    * **URL:** `/local/pulsarr_requests_card/pulsarr_requests_card.js`
+    * **Type:** `JavaScript Module`
 
 ***
 
@@ -72,6 +75,8 @@ type: custom:pulsarr-requests-card
 entity: sensor.pulsarr_enhanced_requests
 show_title: true
 custom_title: Requests Awaiting Approval
+```
+
 
 ### Full Configuration Example (Optional Parameters)
 
@@ -88,6 +93,8 @@ reject_button_color: '#F44336'         # Red for error
 request_item_background_color: '#2b2b2b' # Darker background for each item
 # Optional: Animation control
 disable_hover_animation: false
+```
+
 
 | Parameter | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
