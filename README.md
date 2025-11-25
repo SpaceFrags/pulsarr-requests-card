@@ -17,6 +17,8 @@ It transforms the raw JSON data from the `sensor.pulsarr_enhanced_requests` enti
 * **Real-time Updates:** Requests disappear from the list automatically once processed.
 * **Configurable Style:** Allows customization of the title, button colors, and background for seamless integration with your dashboard theme.
 
+<img width="517" height="564" alt="image" src="https://github.com/user-attachments/assets/861d5c9d-9239-4e34-8fff-09feb4ad1473" />
+
 ### Prerequisites
 
 This card **requires** the custom integration to function:
