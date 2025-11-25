@@ -6,7 +6,7 @@
 
 ## Overview
 
-The **Pulsarr Requests Card** is a custom Lovelace card for Home Assistant, designed to visually display and manage pending media approval requests fetched by the companion custom integration.
+The **Pulsarr Requests Card** is a custom Lovelace card for Home Assistant, designed to visually display and manage pending media approval requests fetched by the companion custom integration and jamcalli's [Pulsarr](https://jamcalli.github.io/Pulsarr/) Real-time Plex watchlist monitoring and content acquisition tool, which Seamlessly sync Plex watchlists with Sonarr and Radarr.
 
 It transforms the raw JSON data from the `sensor.pulsarr_enhanced_requests` entity into an attractive, actionable list showing media posters, titles, request details, and most importantly, provides one-click **Approve** and **Reject** buttons by utilizing the integration's service call.
 
